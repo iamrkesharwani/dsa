@@ -10,9 +10,7 @@ function findDuplicate(nums) {
       }
     }
   }
-  if (!found) {
-    console.log('No duplicate found');
-  }
+  if (!found) console.log('No duplicate found');
 }
 
 function findDuplicateTwo(nums) {
@@ -23,15 +21,12 @@ function findDuplicateTwo(nums) {
     let newNum = num;
 
     if (memory.has(newNum)) {
-      console.log('Number found:', num);
+      console.log(`Found: ${num}`);
       found = true;
     }
-
     memory.add(num);
   }
-  if (!found) {
-    console.log('No duplicate found');
-  }
+  if (!found) console.log('Not found');
 }
 
 findDuplicate(nums);
