@@ -8,11 +8,11 @@ function findForPair(nums, target) {
     for (let j = 0; j < nums.length; j++) {
       if (nums[i] + nums[j] === target) {
         found = true;
-        console.log('Found:', nums[i], nums[j]);
+        console.log(`Found: ${nums[i]}, ${nums[j]}`);
       }
     }
   }
-  if (!found) console.log('No result');
+  if (!found) console.log('Not found');
 }
 
 function findHashPair(nums, target) {
@@ -23,17 +23,13 @@ function findHashPair(nums, target) {
     let needed = target - num;
 
     if (memory.has(needed)) {
-      console.log('Found:', needed, num);
-      found = true;
+      console.log(`Found: ${needed}, ${num}`);
+      found = false;
     }
-
     memory.add(num);
   }
-
-  if (!found) {
-    console.log('Not found');
-  }
+  if (!found) console.log('Not found');
 }
 
+// findForPair(nums, target);
 findHashPair(nums, target);
-findForPair(nums, target);
